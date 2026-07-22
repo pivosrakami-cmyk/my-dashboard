@@ -1,0 +1,143 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.row:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.text {
+  flex: 1;
+  font-size: 15px;
+  min-width: 0;
+  color: var(--ink);
+}
+.text:hover {
+  color: var(--text-accent, #6b63e0);
+  text-decoration: underline;
+}
+
+.select {
+  flex: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.select:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.textDone {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.project {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  flex: none;
+  background: var(--surface-2);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.more {
+  align-self: flex-start;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.more:hover {
+  background: var(--lav);
+  color: #141310;
+  transform: translateY(-1px);
+}
+
+/* статус-пилюли */
+.stQ {
+  background: var(--peach);
+  color: #5c3a26;
+  flex: none;
+}
+.stNew {
+  background: var(--surface-2);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  flex: none;
+}
+.stWork {
+  background: var(--lav);
+  color: #141310;
+  flex: none;
+}
+.stRework {
+  background: var(--peach);
+  color: #5c3a26;
+  flex: none;
+}
+.stReview {
+  background: var(--sun);
+  color: #3d4210;
+  flex: none;
+}
+.stBlocked {
+  background: #f2c0b8;
+  color: #7a2e20;
+  flex: none;
+}
+.stDone {
+  background: var(--mint);
+  color: #1c4a30;
+  flex: none;
+}
+.stRejected {
+  background: var(--surface-2);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  flex: none;
+}
+
+@media (max-width: 560px) {
+  .row {
+    flex-wrap: wrap;
+  }
+  .text {
+    flex-basis: 100%;
+    order: 3;
+  }
+}

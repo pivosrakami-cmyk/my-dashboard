@@ -1,0 +1,70 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text {
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.4;
+  min-width: 0;
+}
+.textDone {
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.4;
+  min-width: 0;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.select {
+  flex: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.select:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* статус-пилюли */
+.stQ { background: var(--peach); color: #5c3a26; flex: none; }
+.stNew { background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); flex: none; }
+.stWork { background: var(--lav); color: #141310; flex: none; }
+.stRework { background: var(--peach); color: #5c3a26; flex: none; }
+.stReview { background: var(--sun); color: #3d4210; flex: none; }
+.stBlocked { background: #f2c0b8; color: #7a2e20; flex: none; }
+.stDone { background: var(--mint); color: #1c4a30; flex: none; }
+.stRejected { background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); flex: none; }
+
+@media (max-width: 560px) {
+  .task {
+    flex-wrap: wrap;
+  }
+  .text {
+    flex-basis: 100%;
+    order: 3;
+  }
+}
