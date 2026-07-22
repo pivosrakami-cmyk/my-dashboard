@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Playfair_Display, PT_Sans } from "next/font/google";
 import "./globals.css";
 import Shell from "@/components/Shell";
 import { getProjects } from "@/lib/vault";
 
+// Lato в Google Fonts не поддерживает кириллицу — берём PT Sans, похожий гуманистический sans с кириллицей
 const playfair = Playfair_Display({
   subsets: ["latin", "cyrillic"],
   weight: ["600", "700"],
   variable: "--font-heading",
 });
-const lato = Lato({
+const ptSans = PT_Sans({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "700", "900"],
+  weight: ["400", "700"],
   variable: "--font-body",
 });
 
@@ -29,7 +30,7 @@ export default async function RootLayout({
   const navProjects = projects.map((p) => ({ slug: p.slug, name: p.name }));
 
   return (
-    <html lang="ru" className={`${playfair.variable} ${lato.variable}`}>
+    <html lang="ru" className={`${playfair.variable} ${ptSans.variable}`}>
       <body>
         <Shell projects={navProjects}>{children}</Shell>
       </body>
