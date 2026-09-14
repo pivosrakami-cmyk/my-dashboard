@@ -11,6 +11,8 @@ Write-Host "2/4 prebuilt/..."
 if (Test-Path prebuilt) { Remove-Item -Recurse -Force prebuilt }
 New-Item -ItemType Directory -Path prebuilt\.next -Force | Out-Null
 Copy-Item -Recurse .next\standalone\* prebuilt\
+# standalone притаскивает .git — убрать, иначе git примет prebuilt за сабмодуль
+if (Test-Path prebuilt\.git) { Remove-Item -Recurse -Force prebuilt\.git }
 Copy-Item -Recurse .next\static prebuilt\.next\static
 Copy-Item -Recurse public prebuilt\public
 
