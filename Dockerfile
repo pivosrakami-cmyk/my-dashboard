@@ -2,8 +2,12 @@
 FROM node:22-slim AS builder
 WORKDIR /app
 
+# Сервер небольшой: ограничиваем память Node на сборке, без аудита и телеметрии
+ENV NODE_OPTIONS=--max-old-space-size=1024
+ENV NEXT_TELEMETRY_DISABLED=1
+
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --no-audit --no-fund
 
 COPY . .
 RUN npm run build
