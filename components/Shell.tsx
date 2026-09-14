@@ -67,6 +67,12 @@ export default function Shell({
             </button>
             {menuOpen && (
               <div className={styles.dropdown}>
+                <Link
+                  href="/karta"
+                  className={`${styles.navLink} ${pathname === "/karta" ? styles.navLinkActive : ""}`}
+                >
+                  🗺️ Карта жизни
+                </Link>
                 {projects.map((p) => {
                   const active = pathname === `/project/${p.slug}`;
                   return (
