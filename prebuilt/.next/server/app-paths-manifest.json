@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/health/route": "app/api/health/route.js",
+  "/api/task/route": "app/api/task/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/karta/page": "app/karta/page.js",
+  "/page": "app/page.js",
+  "/project/[slug]/page": "app/project/[slug]/page.js"
+}
